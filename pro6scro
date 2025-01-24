@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scrolling Text Example</title>
+  <script>
+    var count = 0;
+    var delay = 250;
+    var text = "WELCOME TO CHENNAI";
+    
+    function scrollTitle() {
+      
+      document.title = text.substring(count) + text.substring(0, count);
+
+      
+      if (count < text.length) {
+        count++;
+      } else {
+        count = 0;
+      }
+
+      setTimeout(scrollTitle, delay);
+    }
+
+    window.onload = scrollTitle;
+  </script>
+</head>
+<body >
+ <center> <h1>Scroll text in the browser tab</h1></center>
+</body>
+</html>
+1
