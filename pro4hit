@@ -1,0 +1,27 @@
+<html> 
+<head> 
+    <title>Document</title> 
+</head> 
+<body> 
+  <div> 
+    <p>The number of visitors is: <span id="cntr">0</span></p> 
+  </div> 
+  <script> 
+    // Check if the counter already exists in localStorage
+    if (localStorage.getItem('visitorCount') === null) {
+      localStorage.setItem('visitorCount', '0');
+    }
+    
+    function counter_fn() { 
+      var counter = document.getElementById("cntr"); 
+      var count = parseInt(localStorage.getItem('visitorCount')); // Get the stored count
+      count = count + 1;  // Increment the count
+      localStorage.setItem('visitorCount', count.toString());  // Store the updated count
+      counter.innerHTML = count;  // Update the displayed count
+    } 
+    
+    // Run the counter function when the page is loaded
+    window.onload = counter_fn; 
+  </script> 
+</body> 
+</html>
