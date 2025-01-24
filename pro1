@@ -1,0 +1,28 @@
+<html>
+  <body>
+    <script language="javascript">
+      var inp = parseInt(prompt("Enter the end range value:", "3"));
+      document.write("<table border='1' cellpadding='5' cellspacing='0'>");
+      document.write("<tr><th>No</th><th>Square</th><th>Square Root</th><th>Cube</th><th>Complement</th></tr>");
+
+      for (var i = 1; i <= inp; i++) {
+        var square = i * i;
+        var squareRoot = Math.sqrt(i).toFixed(2);
+        var cube = i * i * i;
+        var complement = -i;
+
+        document.write(
+          "<tr>" +
+            "<td>" + i + "</td>" +
+            "<td>" + square + "</td>" +
+            "<td>" + squareRoot + "</td>" +
+            "<td>" + cube + "</td>" +
+            "<td>" + complement + "</td>" +
+          "</tr>"
+        );
+      }
+
+      document.write("</table>");
+    </script>
+  </body>
+</html>
