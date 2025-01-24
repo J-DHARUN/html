@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Sort Arrays Example</title>
+  </head>
+  <body>
+    <h2>Sort Arrays Example (Numeric and String)</h2>
+
+    <script>
+      var marks = [12, 25, 31, 23, 75, 81, 10]; 
+
+      document.write("Original Numeric Array:</br>");
+      document.write(marks + "</br>");
+
+      marks.sort(function(a, b) {
+        return a - b; 
+      });
+
+      document.write("After Sorting Numeric Array in Ascending Order:</br>");
+      document.write(marks + "</br></br>");
+
+      function sortString(strArray) {
+        var i = 0;
+        var j;
+        while (i < strArray.length) {
+          j = i + 1;
+          while (j < strArray.length) {
+            if (strArray[j] < strArray[i]) {
+              var tempStr = strArray[i];
+              strArray[i] = strArray[j];
+              strArray[j] = tempStr;
+            }
+            j++;
+          }
+          i++;
+        }
+      }
+
+      var sortArray = ['Karthik', 'Saideep', 'Balu', 'Shweta', 'Divya', 'Bhanu'];
+
+      
+      document.write("Original String Array:</br>");
+      document.write(sortArray.join(', ') + "</br>");
+
+      
+      sortString(sortArray);
+
+      
+      document.write("After Sorting String Array:</br>");
+      document.write(sortArray.join(', ') + "</br>");
+    </script>
+  </body>
+</html>
