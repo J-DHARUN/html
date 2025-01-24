@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>McDonalds</title>
+  <script language="JavaScript">
+    var m; 
+    function pick(F1) { 
+      var z=" "; 
+      for(var j=0; j<3; j++) { 
+        for(var i=0; i<F1.elements[j].length; i++) { 
+          if(F1.elements[j][i].selected) { 
+            var y=F1.elements[j].options[i].value; 
+            z=z+"\n"+y; 
+            F1.elements[3].value=z; // Update textarea with selected items
+          } 
+        } 
+      } 
+      m=z; 
+    } 
+
+    function clr(F1) { 
+      F1.elements[3].value=" "; // Clear the textarea when the clear button is clicked
+    }
+  </script>
+</head>
+
+<body bgcolor="#00ffff">
+  <h2><font color="blue" size="20"><center>Welcome to the world Famous Fast Food center</center></font><br>
+  <font color="red" size="10"><center>Mc Donalds!</center></font></h2>
+
+  <form name="F1">
+    <p>Select the menu items of your choice:</p>
+    
+    <table>
+      <tr valign="top">
+        <td colspan="2">
+          <font size="+1">Major dishes:</font><br>
+          <select name="s1" MULTIPLE onChange="pick(this.form)">
+            <option value="Mc burger->Rs.80" selected>Mc burger</option>
+            <option value="Fish fillets->Rs.70">Fish fillets</option>
+            <option value="Burger->Rs.60">Burger</option>
+            <option value="Veg burger->Rs.50">Veg burger</option>
+          </select><br><br>
+        </td>
+      </tr>
+
+      <tr valign="top">
+        <td colspan="2">
+          <font size="+1">Miscellaneous:</font><br>
+          <select name="s2" MULTIPLE onChange="pick(this.form)">
+            <option value="Dining Table & Chairs->500" selected>Dining Table & Chairs</option>
+            <option value="Tissues->1000">Tissues</option>
+            <option value="Menu Cards->30">Menu Cards</option>
+            <option value="Tool Bowl->50">Tool Bowl</option>
+          </select><br><br>
+        </td>
+      </tr>
+
+      <tr valign="top">
+        <td colspan="2">
+          <font size="+1">Beverages:</font><br>
+          <select name="s3" onChange="pick(this.form)">
+            <option value="Milkshakes->Rs.35" selected>Milkshakes</option>
+            <option value="Soft drinks->Rs.20">Soft drinks</option>
+            <option value="Softy->Rs.30">Softy</option>
+          </select><br><br>
+        </td>
+      </tr>
+    </table>
+
+    <br><font size="6">The items selected from the menu are:</font><br>
+    <textarea name="TAI" rows="10" cols="50"></textarea><br><br>
+    
+    <input type="button" value="Submit">
+    <input type="button" value="Clear" onclick="clr(this.form)">
+  </form>
+</body>
+</html>
