@@ -1,0 +1,92 @@
+.....index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frame Example</title>
+</head>
+<frameset cols="30%, 70%">
+    <frame src="main.html" name="one">
+    <frame src="second.html" name="two">
+</frameset>
+</html>
+
+.......main.html
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VBScript</title>
+</head>
+<script language="javascript" type="text/javascript">
+    function result(A) {
+        if (A === 1) {
+            window.top.two.location.href = "yahoo.html";
+        } else if (A === 2) {
+            window.top.two.location.href = "alta.html";
+        } else if (A === 3) {
+            window.top.two.location.href = "infoseek.html";
+        }
+    }
+</script>
+<body bgcolor="#00FFFF">
+    <form>
+        <div align="center">
+            <input type="radio" name="choice" onclick="result(1)">Yahoo<br>
+            <input type="radio" name="choice" onclick="result(2)">Altavista<br>
+            <input type="radio" name="choice" onclick="result(3)">Infoseek<br>
+        </div>
+    </form>
+</body>
+</html>
+
+......second.html   
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hi</title>
+</head>
+<body bgcolor="blue">
+    <h1 style="text-align: center; color: white;">Welcome you All!!!!</h1>
+</body>
+</html>
+
+
+.......yahoo.html 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yahoo</title>
+</head>
+<body bgcolor="yellow">
+    <h1 style="text-align: center;">
+        <a href="https://www.yahoo.com" target="_blank">Yahoo Page</a>
+    </h1>
+</body>
+</html>
+
+.......infoseek.html 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Infoseek</title>
+</head>
+<body bgcolor="pink">
+    <h1 style="text-align: center;">
+        <a href="http://infoseek.com" target="_blank">Infoseek</a>
+    </h1>
+</body>
+</html>
+
+..........alta.html 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Altavista</title>
+</head>
+<body bgcolor="green">
+    <h1 style="text-align: center;">
+        <a href="http://digital.com" target="_blank">Altavista</a>
+    </h1>
+</body>
+</html>
